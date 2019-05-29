@@ -64,5 +64,8 @@ if __name__ == '__main__':
     # wrap Flask application with engineio's middleware
     app = socketio.Middleware(sio, app)
 
+    #New
+    eventlet.sleep(0)
+
     # deploy as an eventlet WSGI server
     eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
